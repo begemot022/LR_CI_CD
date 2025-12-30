@@ -22,8 +22,7 @@ class Car:
             raise TooMuchFuelError(too_much_fuel_msg)
 
         self._fuel_in_tank += fuel_quantity
-
-    def drive(self, distance_km: float):
+   def drive(self, distance_km: float):
         fuel_burned = 8 * (distance_km / 100)
         not_enough_fuel_msg = "Не доедем же..."
 
@@ -32,3 +31,4 @@ class Car:
 
         self._fuel_in_tank -= fuel_burned
         return self.get_current_fuel_level()
+
