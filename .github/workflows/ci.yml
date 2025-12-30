@@ -20,10 +20,10 @@ jobs:
       - name: Install dependencies
         run: pip install pytest ruff
 
-      - name: Run Ruff code checking
-        run: ruff check --output-format=github .
-      
       - name: Run unit tests
         run: |
           cd src
           python pytest -v
+
+      - name: Run Ruff code checking
+        run: ruff check --output-format=github .
