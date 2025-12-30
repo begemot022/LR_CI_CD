@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: [main, master]
+    branches: main
 
 jobs:
   checks:
@@ -20,11 +20,10 @@ jobs:
       - name: Install dependencies
         run: pip install pytest ruff
 
+      - name: Run Ruff code checking
+        run: ruff check --output-format=github .
+      
       - name: Run unit tests
         run: |
           cd src
-          python -m pytest -v
-
-      - name: Run Ruff code checking
-        run: ruff check --output-format=github .
-
+          python pytest -v
